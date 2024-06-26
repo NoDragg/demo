@@ -1,15 +1,22 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
+@RequestMapping
 public class HomeController {
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home() {
         return "Hello, World!";
     }
-    @RequestMapping("/about")
-    public String about() {
-        return "This is the about page!";
+    @GetMapping("/user")
+    public String userHome() {
+        return "Hello, User!";
     }
+    @GetMapping("/admin")
+    public String adminHome() {
+        return "Hello, Admin!";
+    }
+
 }
